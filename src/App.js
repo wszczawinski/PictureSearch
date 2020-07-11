@@ -1,19 +1,26 @@
 import React from 'react';
-import './App.css';
-import { fetchAPI } from './services/fetchService';
-import SearchBar from './components/SearchBar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styles from './App.module.scss';
+//components
 import Header from './components/Header';
+//screens
+import Home from './screens/Home';
+import Search from './screens/Search';
+//routes
+import * as ROUTES from './constants/routes';
 
 function App() {
-  fetchAPI('banana', 2);
   return (
-    <div className="App">
-      <Header />
-      <main className="App-main">
-        Picture-search
-        <SearchBar />
-      </main>
-    </div>
+    <Router>
+      <div className={styles.App}>
+        <Header />
+
+        <Switch>
+          <Route exact path={ROUTES.HOME} component={Home} />
+          <Route path={ROUTES.SEARCH} component={Search} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
