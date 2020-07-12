@@ -17,16 +17,19 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (query !== '') {
-      setPictures(fetchAPI(query, page));
+      fetchAPI(query, page).then(data => {
+        setPictures(data.map(data => data.small));
+      });
     }
   }, [query, page]);
 
   useEffect(() => {
-    pictures && console.log(pictures);
-    // history.push({
-    //   pathname: '/search',
-    //   state: { pictures: pictures },
-    // });)
+    if (pictures) {
+      history.push({
+        pathname: '/search',
+        state: { pictures: pictures },
+      });
+    }
   }, [pictures]);
 
   return (
