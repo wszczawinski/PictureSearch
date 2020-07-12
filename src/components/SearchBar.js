@@ -5,7 +5,7 @@ import styles from './SearchBar.module.scss';
 
 export default function SearchBar() {
   let [pictures, setPictures] = useState();
-  let [page, setPage] = useState(1);
+  let [page] = useState(1);
   let [query, setQuery] = useState('');
   const queryInput = useRef(null);
   const history = useHistory();
@@ -30,13 +30,12 @@ export default function SearchBar() {
         state: { pictures: pictures },
       });
     }
-  }, [pictures]);
+  }, [pictures, history]);
 
   return (
     <section className={styles.searchBox}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>
-          Search Picture
           <input
             type="search"
             placeholder="Search for.."

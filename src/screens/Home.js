@@ -5,7 +5,6 @@ import SearchBar from '../components/SearchBar';
 export default function Home() {
   return (
     <main className={styles.main}>
-      Picture-search
       <SearchBar />
     </main>
   );

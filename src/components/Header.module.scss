@@ -1,0 +1,21 @@
+.navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  .logo {
+    display: flex;
+    align-items: center;
+    max-height: 10vh;
+
+    .logoimg {
+      height: 100%;
+    }
+    .logotext {
+      color: white;
+      min-width: 200px;
+      padding: 0 5vw;
+      font-size: 1.2rem;
+    }
+  }
+}
