@@ -17,8 +17,8 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (query !== '') {
-      fetchAPI(query, page).then(data => {
-        setPictures(data.map(data => data.small));
+      fetchAPI(query, page).then(results => {
+        setPictures(results.map(result => result));
       });
     }
   }, [query, page]);

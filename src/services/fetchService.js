@@ -8,7 +8,7 @@ export const fetchAPI = (query, page) => {
     .then(data => {
       let results = [];
       data.results.forEach(element => {
-        results.push(element.urls);
+        results.push(element);
       });
       return results;
     });
