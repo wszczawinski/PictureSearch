@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  color: white;
+  font-size: 0.9rem;
+
+  .socialLink {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .socialImage {
+      padding: 0 3vw;
+      height: 40%;
+    }
+  }
+}

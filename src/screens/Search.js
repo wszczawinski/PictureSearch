@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './Search.module.scss';
 import SearchBar from '../components/SearchBar';
 import SearchResult from '../components/SearchResult';
 import { useLocation } from 'react-router-dom';
@@ -13,10 +14,8 @@ export default function Search() {
 
   return (
     <div>
-      <h1>Search</h1>
       <SearchBar />
-      <h2>Results</h2>
-      <section>
+      <section className={styles.searchResults}>
         {results.map(item => (
           <SearchResult key={item.id} picture={item} />
         ))}
