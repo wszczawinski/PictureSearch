@@ -11,5 +11,8 @@ export const fetchAPI = (query, page) => {
         results.push(element);
       });
       return results;
+    })
+    .catch(err => {
+      return err;
     });
 };

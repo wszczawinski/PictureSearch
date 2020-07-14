@@ -1,5 +1,6 @@
 .searchBox {
   margin: 5vh auto;
+  
   .input {
     color: white;
     width: 80vw;
@@ -9,5 +10,15 @@
     border-radius: 10px;
     outline: none;
     background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.errorMessage {
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  .errorImage {
+    height: 15vh;
+    width: auto;
   }
 }

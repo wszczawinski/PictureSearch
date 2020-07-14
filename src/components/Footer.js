@@ -9,7 +9,7 @@ export default function Footer() {
       <a
         className={styles.socialLink}
         href="https://github.com/wszczawinski"
-        target="_blank"
+        target="blank"
         rel="noopener noreferrer"
       >
         <img className={styles.socialImage} src={ghSocial} alt="github-link" />

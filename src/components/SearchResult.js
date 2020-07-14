@@ -18,7 +18,6 @@ export default function SearchResult({ picture }) {
         className={styles.resultPicture}
         src={picture.urls.small}
         alt="search-result"
-        srcSet=""
       />
     </article>
   );
