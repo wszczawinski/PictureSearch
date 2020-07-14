@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Search.module.scss';
 import SearchBar from '../components/SearchBar';
 import SearchResult from '../components/SearchResult';
+import Pagination from '../components/Pagination';
 import { useLocation } from 'react-router-dom';
 
 export default function Search() {
@@ -20,6 +21,7 @@ export default function Search() {
           <SearchResult key={item.id} picture={item} />
         ))}
       </section>
+      <Pagination />
     </div>
   );
 }
