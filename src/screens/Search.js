@@ -10,6 +10,7 @@ export default function Search() {
   let [results, setResults] = useState(location.state.pictures);
   let [currentPage, setCurrentPage] = useState(1);
   let [query] = useState(sessionStorage.getItem('query'));
+  let [totalPages, setTotalPages] = useState();
 
   useEffect(() => {
     setResults(location.state.pictures);
@@ -20,15 +21,28 @@ export default function Search() {
     window.scrollTo(0, 0);
   };
 
+  const changeTotal = total => {
+    setTotalPages(total);
+  };
+
   return (
     <div>
-      <SearchBar changePage={changePage} currentPage={currentPage} currentQuery={query} />
+      <SearchBar
+        changePage={changePage}
+        currentPage={currentPage}
+        currentQuery={query}
+        changeTotal={changeTotal}
+      />
       <section className={styles.searchResults}>
         {results.map(item => (
           <SearchResult key={item.id} picture={item} />
         ))}
       </section>
-      <Pagination changePage={changePage} currentPage={currentPage} />
+      <Pagination
+        changePage={changePage}
+        currentPage={currentPage}
+        totalPages={totalPages}
+      />
     </div>
   );
 }
