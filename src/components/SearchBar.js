@@ -4,11 +4,12 @@ import { fetchAPI } from '../services/fetchService';
 import styles from './SearchBar.module.scss';
 import errorPic from '../img/error.png';
 
-export default function SearchBar() {
+export default function SearchBar({ currentPage }) {
   let [pictures, setPictures] = useState();
-  let [page] = useState(1);
+  let [page, setPage] = useState(currentPage);
   let [query, setQuery] = useState('');
   let [errorMessage, setErrorMessage] = useState();
+
   const queryInput = useRef(null);
   const history = useHistory();
 
@@ -21,6 +22,7 @@ export default function SearchBar() {
     if (query !== '') {
       fetchAPI(query, page).then(results => {
         if (results.length !== 0 && Array.isArray(results)) {
+          console.log(results);
           setPictures(results.map(result => result));
         } else if (results.length === 0) {
           setErrorMessage('Try another keyword');
@@ -39,6 +41,10 @@ export default function SearchBar() {
       });
     }
   }, [pictures, history]);
+
+  useEffect(() => {
+    setPage(currentPage);
+  }, [currentPage]);
 
   return (
     <>

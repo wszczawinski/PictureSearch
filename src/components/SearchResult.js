@@ -2,15 +2,13 @@ import React from 'react';
 import styles from './SearchResults.module.scss';
 
 export default function SearchResult({ picture }) {
-  console.log(picture);
   return (
     <article className={styles.picture}>
       <div className={styles.user}>
         <img
           className={styles.image}
           src={picture.user.profile_image.small}
-          alt=""
-          srcset=""
+          alt="user-avatar"
         />
         <p>{picture.user.username}</p>
       </div>

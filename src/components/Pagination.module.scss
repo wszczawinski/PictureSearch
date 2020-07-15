@@ -8,8 +8,16 @@
   color: white;
   font-size: 900;
 
+  .btn {
+    background: none;
+    border: none;
+    height: 100%;
+    width: 10vw;
+    margin: 0 5vw;
+    outline: none;
+  }
+
   .buttonImage {
     height: 40%;
-    padding: 0 5vw;
   }
 }

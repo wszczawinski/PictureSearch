@@ -3,15 +3,34 @@ import styles from './Pagination.module.scss';
 import backButton from '../img/back-button.png';
 import forwardButton from '../img/forward-button.png';
 
-export default function Pagination() {
-  let [currentPage, setCurrentPage] = useState(1);
+export default function Pagination({ changePage, currentPage }) {
+  let [page] = useState(currentPage);
 
-  
   return (
     <section className={styles.pagination}>
-      <img className={styles.buttonImage} src={backButton} alt="back-button" />
-      <p>{currentPage}</p>
-      <img className={styles.buttonImage} src={forwardButton} alt="forward-button" />
+      {page === 1 ? (
+        <p className={styles.btn}></p>
+      ) : (
+        <button
+          className={styles.btn}
+          onClick={() => {
+            changePage(page - 1);
+          }}
+        >
+          <img className={styles.buttonImage} src={backButton} alt="back-button" />
+        </button>
+      )}
+
+      <p>{page}</p>
+
+      <button
+        className={styles.btn}
+        onClick={() => {
+          changePage(page + 1);
+        }}
+      >
+        <img className={styles.buttonImage} src={forwardButton} alt="forward-button" />
+      </button>
     </section>
   );
 }
