@@ -4,7 +4,12 @@ import { fetchAPI } from '../services/fetchService';
 import styles from './SearchBar.module.scss';
 import errorPic from '../img/error.png';
 
-export default function SearchBar({ currentPage, currentQuery, changePage }) {
+export default function SearchBar({
+  currentPage,
+  currentQuery,
+  changePage,
+  setTotalPages,
+}) {
   let [pictures, setPictures] = useState();
   let [page, setPage] = useState(currentPage);
   let [query, setQuery] = useState(currentQuery ? currentQuery : null);
@@ -31,9 +36,10 @@ export default function SearchBar({ currentPage, currentQuery, changePage }) {
     console.log(page);
     if (query !== null) {
       fetchAPI(query, page).then(results => {
-        if (results.length !== 0 && Array.isArray(results)) {
-          setPictures(results.map(result => result));
-        } else if (results.length === 0) {
+        if (results[0].length !== 0 && Array.isArray(results[0])) {
+          setPictures(results[0].map(result => result));
+          setTotalPages(results[1]);
+        } else if (results[0].length === 0) {
           setErrorMessage('Try another keyword');
         } else {
           setErrorMessage('Check your internet connection');

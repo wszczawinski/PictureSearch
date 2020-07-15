@@ -3,7 +3,7 @@ import styles from './Pagination.module.scss';
 import backButton from '../img/back-button.png';
 import forwardButton from '../img/forward-button.png';
 
-export default function Pagination({ changePage, currentPage }) {
+export default function Pagination({ changePage, currentPage, totalPages }) {
   let [page, setPage] = useState(currentPage);
 
   useEffect(() => {
@@ -27,14 +27,18 @@ export default function Pagination({ changePage, currentPage }) {
 
       <p>{page}</p>
 
-      <button
-        className={styles.btn}
-        onClick={() => {
-          changePage(page + 1);
-        }}
-      >
-        <img className={styles.buttonImage} src={forwardButton} alt="forward-button" />
-      </button>
+      {totalPages >= page ? (
+        <p className={styles.btn}></p>
+      ) : (
+        <button
+          className={styles.btn}
+          onClick={() => {
+            changePage(page + 1);
+          }}
+        >
+          <img className={styles.buttonImage} src={forwardButton} alt="forward-button" />
+        </button>
+      )}
     </section>
   );
 }

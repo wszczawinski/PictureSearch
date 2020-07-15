@@ -7,10 +7,11 @@ export const fetchAPI = (query, page) => {
     .then(resp => resp.json())
     .then(data => {
       let results = [];
+      let totalPages = data.total_pages;
       data.results.forEach(element => {
         results.push(element);
       });
-      return results;
+      return [results, totalPages];
     })
     .catch(err => {
       return err;
