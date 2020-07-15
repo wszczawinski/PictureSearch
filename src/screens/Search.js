@@ -9,19 +9,20 @@ export default function Search() {
   let location = useLocation();
   let [results, setResults] = useState(location.state.pictures);
   let [currentPage, setCurrentPage] = useState(1);
+  let [query] = useState(sessionStorage.getItem('query'));
 
   useEffect(() => {
     setResults(location.state.pictures);
   }, [location]);
 
   const changePage = page => {
-    console.log(page);
     setCurrentPage(page);
+    window.scrollTo(0, 0);
   };
 
   return (
     <div>
-      <SearchBar currentPage={currentPage} />
+      <SearchBar changePage={changePage} currentPage={currentPage} currentQuery={query} />
       <section className={styles.searchResults}>
         {results.map(item => (
           <SearchResult key={item.id} picture={item} />
