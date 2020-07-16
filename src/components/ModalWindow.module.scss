@@ -15,7 +15,7 @@
 
   .modal {
     width: 95%;
-    max-width: 800px;
+    max-width: 720px;
     position: relative;
     padding: 10px;
     background-color: white;
@@ -26,10 +26,14 @@
     align-items: center;
     justify-content: center;
     .modalImage {
-      width: 100%;
-      max-width: 800px;
+      width: 90%;
+      max-width: 650px;
       max-height: 80vh;
       border-radius: 5px;
+
+      @media (min-width: 800px) {
+          width: auto;
+      }
     }
     .modalLink {
       text-decoration: none;
@@ -55,6 +59,8 @@
     border: none;
   }
 }
+
+
 
 @keyframes showModal {
   0% {

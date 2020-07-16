@@ -8,6 +8,8 @@
   margin-bottom: 3vh;
   border-radius: 5px;
   border: 1px solid white;
+  font-weight: bold;
+  background: rgba($color: #fff, $alpha: 0.3);
 
   @media (min-width: 600px) {
     margin: 3vh;
