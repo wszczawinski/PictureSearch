@@ -26,7 +26,7 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <main className={styles.main} >
       <SearchBar
         changePage={changePage}
         currentPage={currentPage}
@@ -43,6 +43,6 @@ export default function Search() {
         currentPage={currentPage}
         totalPages={totalPages}
       />
-    </div>
+    </main>
   );
 }

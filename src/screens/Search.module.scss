@@ -1,6 +1,23 @@
+.main {
+  background: transparent;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+}
+
 .searchResults {
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
-  align-items: center;
+  width: 90%;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
