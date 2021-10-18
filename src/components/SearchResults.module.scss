@@ -3,7 +3,6 @@
   flex-direction: column;
   max-width: 350px;
   text-align: center;
-  justify-content: center;
   flex-shrink: 1;
   margin-bottom: 3vh;
   border-radius: 5px;
@@ -14,6 +13,7 @@
   @media (min-width: 600px) {
     margin: 3vh;
   }
+
   .user {
     display: flex;
     flex-direction: row;
@@ -27,6 +27,7 @@
       margin-right: 10px;
     }
   }
+
   .resultPictureBtn {
     width: 100%;
     height: auto;
@@ -34,7 +35,9 @@
     border: none;
     outline: none;
     cursor: pointer;
+    flex-grow: 2;
   }
+  
   .resultPicture {
     border-radius: 5px;
     width: 100%;
