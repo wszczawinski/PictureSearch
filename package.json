@@ -1,6 +1,6 @@
 {
   "name": "pictures-search",
-  "homepage": "https://wszczawinski.github.io/PictureSearch",
+  "homepage": "https://picture-search.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
